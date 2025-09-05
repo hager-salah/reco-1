@@ -3,10 +3,11 @@ pipline{
         lablel 'docker'
     }
     stages{
-        stage('Build Docker Image')}
+        stage('Build Docker Image'){
             steps{
                 sh 'docker build -t hagerelhalaby/docker-reco Dockerfile.dev'
             }
+        }
         stage('Run Tests'){
             steps{
                 script{
@@ -17,3 +18,4 @@ pipline{
             }
         }
     }
+}
