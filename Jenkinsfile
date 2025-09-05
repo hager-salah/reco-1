@@ -1,11 +1,11 @@
 pipeline{
     agent {
-        lablel 'docker'
+        label 'docker'
     }
     stages{
         stage('Build Docker Image'){
             steps{
-                sh 'docker build -t hagerelhalaby/docker-reco Dockerfile.dev'
+              sh  ' docker build -t hagerelhalaby/docker-reco -f Dockerfile.dev .'
             }
         }
         stage('Run Tests'){
