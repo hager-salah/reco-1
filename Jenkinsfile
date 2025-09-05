@@ -3,7 +3,7 @@ pipline{
         lablel 'docker'
     }
     stages{
-        stage{'Build Docker Image'}
+        stage('Build Docker Image')}
             steps{
                 sh 'docker build -t hagerelhalaby/docker-reco Dockerfile.dev'
             }
@@ -13,8 +13,7 @@ pipline{
                     env.Docker_BUILDIT = 1
         
                 sh 'docker run -e CI=true hagerelhalaby/docker-reco npm run test'
+                }
             }
         }
     }
-    }
-}
